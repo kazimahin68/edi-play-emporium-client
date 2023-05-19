@@ -84,11 +84,11 @@ const Register = () => {
                             <p className='text-green-600'>{success}</p>
                         </div>
                         <div className="form-control mt-6">
-                            <input type="submit" className="btn font-bold bg-[#7c9c05] border-none hover:bg-[#a5c926]" value="Sign In" />
+                            <input type="submit" className="btn font-bold bg-[#7c9c05] border-none hover:bg-[#a5c926]" value="Register" />
                         </div>
                     </form>
                     <div>
-                        <div className='text-center mb-5 font-bold divider'>Or Sing In With</div>
+                        <div className='text-center mb-5 font-bold divider px-10'>Or Sing In With</div>
                         <div className='flex justify-center items-center gap-3 mb-5'>
                             <button className='btn btn-outline rounded-full bg-base-200 border-none hover:bg-[#a5c926] text-[#31AA52]'><FaGoogle></FaGoogle></button>
                             <button className='btn btn-outline rounded-full bg-base-200 border-none hover:bg-[#a5c926] '><FaGithub></FaGithub></button>

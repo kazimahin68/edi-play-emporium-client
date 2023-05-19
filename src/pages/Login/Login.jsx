@@ -4,7 +4,7 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
-    const {logIn} = useContext(AuthContext);
+    const {logIn, googleLogin} = useContext(AuthContext);
     
     const img = 'https://i.ibb.co/Cswbnhw/toy-constructor-isometric-blocks-1284-26315.png';
 
@@ -31,6 +31,14 @@ const Login = () => {
             })
     }
 
+    const handleGoogleLogin = () =>{
+        googleLogin()
+        .then(() =>{})
+        .then(error =>{
+            console.log(error)
+        })
+    }
+
     return (
         <div className="bg-base-100 mt-12 md:w-4/5 mx-auto rounded-xl p-10" style={{ backgroundImage: `url(https://i.ibb.co/qBP1Sf5/login-background.png)` }}>
             <div className="hero-content flex-col md:flex-row gap-10">
@@ -48,13 +56,13 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text font-bold">Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="Type your email here" className="input input-bordered" />
+                            <input type="email" name='email' placeholder="Type your email here" className="input input-bordered" required/>
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-bold">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="Choose your password" className="input input-bordered" />
+                            <input type="password" name='password' placeholder="Choose your password" className="input input-bordered" required/>
                             <p className='text-green-600'>{success}</p>
                         </div>
                         <div className="form-control mt-6">
@@ -64,7 +72,7 @@ const Login = () => {
                     <div>
                         <div className='text-center mb-5 font-bold divider'>Or Sing In With</div>
                         <div className='flex justify-center items-center gap-3 mb-5'>
-                            <button className='btn btn-outline rounded-full bg-base-200 border-none hover:bg-[#a5c926] text-[#31AA52]'><FaGoogle></FaGoogle></button>
+                            <button onClick={handleGoogleLogin} className='btn btn-outline rounded-full bg-base-200 border-none hover:bg-[#a5c926] text-[#31AA52]'><FaGoogle></FaGoogle></button>
                             <button className='btn btn-outline rounded-full bg-base-200 border-none hover:bg-[#a5c926] '><FaGithub></FaGithub></button>
                             <button className='btn btn-outline rounded-full bg-base-200 border-none hover:bg-[#a5c926] text-[#0A66C2]'><FaLinkedinIn></FaLinkedinIn></button>
                         </div>
