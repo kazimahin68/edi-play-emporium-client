@@ -6,7 +6,9 @@ import Router from './Routes/Router.jsx'
 import AuthProvider from './Provider/AuthProvider.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <AuthProvider><RouterProvider router={Router}></RouterProvider></AuthProvider>
-  </React.StrictMode>,
+  <div className='h-full' style={{ backgroundImage: `url(https://i.ibb.co/0KC9tPX/bg.jpg)`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center" }}>
+    <React.StrictMode>
+      <AuthProvider><RouterProvider router={Router}></RouterProvider></AuthProvider>
+    </React.StrictMode>,
+  </div>
 )

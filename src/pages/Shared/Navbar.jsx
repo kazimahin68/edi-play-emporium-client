@@ -11,15 +11,15 @@ const Navbar = () => {
 
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link>All Toys</Link></li>
+        <li><Link to='/all-toys'>All Toys</Link></li>
         <li><Link to='/my-toys'>My Toys</Link></li>
-        <li><Link>Add a Toy</Link></li>
-        <li><Link>Blogs</Link></li>
+        <li><Link to='/add-toy'>Add a Toy</Link></li>
+        <li><Link to='/blogs'>Blogs</Link></li>
     </>
 
     return (
-        <div className="navbar bg-base-100 md:w-4/5 mx-auto">
-            <div className="navbar-start justify-between md:justify-normal">
+        <div className="navbar bg-base-100 md:w-4/5 mx-auto rounded-lg px-5">
+            <div className="navbar-start justify-between lg:justify-normal">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden" onClick={toggleDropdown}>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -36,7 +36,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn bg-[#a5c926] border-none">Login</a>
+                <Link to='/login' className="btn font-bold bg-[#7c9c05] border-none hover:bg-[#a5c926]">Login</Link>
             </div>
         </div>
     );
