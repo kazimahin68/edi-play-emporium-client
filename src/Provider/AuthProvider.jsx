@@ -2,6 +2,8 @@
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { createContext, useEffect, useState } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const auth = getAuth(app);
 export const AuthContext = createContext(null);
@@ -29,7 +31,9 @@ const AuthProvider = ({children}) => {
     useEffect(() =>{
         const unsubscribe = onAuthStateChanged(auth, currentUser =>{
             setUser(currentUser);
-            setLoading(false)
+            setLoading(false);
+            AOS.init()
+
         })
         return () =>{
             return unsubscribe;

@@ -2,14 +2,12 @@ import { FaGithub, FaGoogle, FaLinkedinIn } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
-// import img from '../../assets/login-bg.svg'
-
 
 const Login = () => {
-
+    const {logIn} = useContext(AuthContext);
+    
     const img = 'https://i.ibb.co/Cswbnhw/toy-constructor-isometric-blocks-1284-26315.png';
 
-    const { logIn } = useContext(AuthContext);
     const [success, setSuccess] = useState('');
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -38,7 +36,7 @@ const Login = () => {
             <div className="hero-content flex-col md:flex-row gap-10">
                 <div className='w-full md:w-3/4 xl:w-1/2 relative'>
                     <img src={img} className="rounded-lg opacity-50 " />
-                    <div className='absolute flex justify-center items-center flex-col inset-0 p-5'>
+                    <div className='absolute flex justify-center items-center flex-col inset-0 p-5' data-aos="fade-up" data-aos-duration="1000">
                         <h2 className='font-bold text-2xl text-center mb-5'>Welcome to <span className='text-red-600'>EduPlay</span> Emporium</h2>
                         <p className='font-bold text-center'>This is an educational toy shop is a haven for children development and learning. It offers a wide range of toys carefully curated to engage young minds in fun and educational experiences. The shop provides a stimulating environment where children and their parents can explore a diverse selection of toys designed to enhance various skills, such as problem-solving, creativity, critical thinking, and motor skills.</p>
                     </div>
