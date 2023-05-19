@@ -16,7 +16,8 @@ const Router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('https://edu-play-emporium-server-kazimahin68.vercel.app/toys')
             },
             {
                 path: '/all-toys',
