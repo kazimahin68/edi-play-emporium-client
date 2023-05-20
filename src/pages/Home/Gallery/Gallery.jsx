@@ -1,5 +1,6 @@
 
 const Gallery = ({ toy }) => {
+    // console.log(toy)
     const {photo, toyName} = toy;
     return (
         <div data-aos="fade-up"

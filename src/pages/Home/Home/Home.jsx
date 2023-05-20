@@ -8,6 +8,8 @@ const Home = () => {
     if (toys.length > 9) {
         galleryToy = toys.slice(0, 9)
     }
+    // const uniqueSubcategory = uniqBy(toys, 'subCategory').map(toy => toy.subCategory)
+
     return (
         <div>
             <Banner></Banner>
