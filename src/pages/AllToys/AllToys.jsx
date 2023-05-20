@@ -4,15 +4,18 @@ import { useState } from "react";
 
 const AllToys = () => {
     const toys = useLoaderData();
-    const [displayToy, setDisplayToy] = useState(toys)
-    console.log(displayToy.length)
-    if(displayToy.length > 20){
-        setDisplayToy(displayToy.slice(0, 20))
+    const [displayToy, setDisplayToy] = useState(false)
+    const handleShowAll = () => {
+        setDisplayToy(!displayToy)
     }
+
+    const allToys = [...toys];
+    const shownToys = allToys.slice(0, 20);
+    const toysToSHow = displayToy ? toys : shownToys;
     return (
         <div>
             <div className="overflow-x-auto md:w-4/5 mx-auto mt-12">
-                <table className="table w-full table-zebra table-fixed">
+                <table className="table w-full table-zebra xl:table-fixed">
                     {/* head */}
                     <thead>
                         <tr>
@@ -27,11 +30,17 @@ const AllToys = () => {
                     </thead>
                     <tbody>
                         {
-                            displayToy.map((toy, index) => <AllToyRow key={toy._id} toy={toy}
-                            index={index}
+                            toysToSHow.map((toy, index) => <AllToyRow key={toy._id} toy={toy}
+                                index={index}
                             ></AllToyRow>)
                         }
                     </tbody>
+                    <tfoot className="w-full">
+                        <div className='text-center bg-white rounded-lg p-2'>
+                            <button onClick={handleShowAll} className='btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] border-none'>{displayToy ? "Show Less Toys" : "Show All Toys"}</button>
+                        </div>
+
+                    </tfoot>
                 </table>
             </div>
         </div>
