@@ -10,7 +10,8 @@ const Login = () => {
 
     const [success, setSuccess] = useState('');
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
+    console.log(location)
+    const from = location?.state?.from?.pathname || '/';
     const navigate = useNavigate()
 
     const handleLogin = event => {
@@ -33,7 +34,9 @@ const Login = () => {
 
     const handleGoogleLogin = () =>{
         googleLogin()
-        .then(() =>{})
+        .then(() =>{
+            navigate(from, { replace: true })
+        })
         .then(error =>{
             console.log(error)
         })

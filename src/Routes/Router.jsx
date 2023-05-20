@@ -8,6 +8,7 @@ import Blogs from "../pages/Blogs/Blogs";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import ToyDetails from "../pages/ToyDetails/ToyDetails";
 
 const Router = createBrowserRouter([
     {
@@ -23,6 +24,11 @@ const Router = createBrowserRouter([
                 path: '/all-toys',
                 element: <AllToys></AllToys>,
                 loader: () => fetch('https://edu-play-emporium-server-kazimahin68.vercel.app/toys')
+            },
+            {
+                path: '/toy/:id',
+                element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
             },
             {
                 path: '/my-toys',

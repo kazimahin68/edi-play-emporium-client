@@ -1,9 +1,6 @@
-import { useContext } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
 import { Link } from "react-router-dom";
 
 const AllToysRow = ({ toy, index }) => {
-    const {user} = useContext(AuthContext)
     const {_id, userName, toyName, subCategory, price, photo, quantity } = toy;
 
     return (
@@ -32,7 +29,7 @@ const AllToysRow = ({ toy, index }) => {
                 <p className="font-bold">{quantity}</p>
             </td>
             <td>
-                <Link to={user? `/toy/${_id}` : '/login'} className="btn font-bold bg-[#7c9c05] border-none hover:bg-[#a5c926]">View Details</Link>
+                <Link to={`/toy/${_id}`} className="btn font-bold bg-[#7c9c05] border-none hover:bg-[#a5c926]">View Details</Link>
             </td>
         </tr>
     );
