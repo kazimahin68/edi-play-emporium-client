@@ -15,33 +15,6 @@ const MyToys = () => {
             })
     }, [user])
 
-    const handleUpdate = id => {
-        fetch(`https://edu-play-emporium-server-kazimahin68.vercel.app/toys/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ status: 'confirm' })
-        })
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data)
-                if (data.modifiedCount > 0) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Your Appointment is Approved',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    const remaining = toys.filter(booking => booking._id !== id);
-                    const approved = toys.find(booking => booking._id === id)
-                    console.log(approved)
-                    approved.status = 'confirm'
-                    const newBooking = [approved, ...remaining]
-                    setToys(newBooking)
-                }
-            })
-    }
     const handleDelete = id => {
         Swal.fire({
             title: 'Are you sure?',
@@ -73,7 +46,7 @@ const MyToys = () => {
     }
     return (
         <div className = "overflow-x-auto w-full" >
-            <table className="table w-full mt-12">
+            <table className="table w-full md:w-4/5 mx-auto mt-12">
                 {/* head */}
                 <thead>
                     <tr>
@@ -88,7 +61,6 @@ const MyToys = () => {
                     {
                         toys.map(( toy, index) => <MyToysRow key={toy._id} toy={toy}
                             index = {index}
-                            handleUpdate={handleUpdate}
                             handleDelete={handleDelete}
                         ></MyToysRow>)
                     }
