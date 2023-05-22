@@ -28,7 +28,7 @@ const Router = createBrowserRouter([
             {
                 path: '/toy/:id',
                 element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
+                loader: ({params}) => fetch(`https://edu-play-emporium-server-kazimahin68.vercel.app/toys/${params.id}`)
             },
             {
                 path: '/my-toys',
