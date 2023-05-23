@@ -11,8 +11,8 @@ const WoodenToy = ({ woodenToy }) => {
         data-aos-once="false"
         className="mt-12 mb-5">
             <div className="flex flex-col md:flex-row gap-20 opacity-80">
-                <img src={image} className="rounded-2xl w-1/2" alt="" />
-                <div className="w-1/2 flex flex-col justify-center gap-5">
+                <img src={image} className="rounded-2xl md:w-1/2 w-full" alt="" />
+                <div className="md:w-1/2 w-full flex flex-col justify-center gap-5">
                     <h2 className="font-bold"><span className="text-xl">Toy Name:</span> {name}</h2>
                     <p className="font-bold"><span className="text-xl">Price: </span> {price} $</p>
                     <div className="flex gap-2">

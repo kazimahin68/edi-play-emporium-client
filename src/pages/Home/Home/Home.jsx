@@ -5,6 +5,7 @@ import Category from "../Category/Category";
 import { uniqBy } from "lodash";
 import { useEffect, useState } from "react";
 import WoodenToys from "../WoodenToys/WoodenToys";
+import About from "../About/About";
 
 const Home = () => {
     const toys = useLoaderData();
@@ -34,6 +35,7 @@ const Home = () => {
             </div>
             <Category></Category>
             <WoodenToys></WoodenToys>
+            <About></About>
         </div>
     );
 };

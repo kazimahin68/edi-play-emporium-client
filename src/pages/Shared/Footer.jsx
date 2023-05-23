@@ -34,7 +34,7 @@ const Footer = () => {
                 <p className='font-bold opacity-80'>Copyright © 2023 - All right reserved by EduPlay Emporium</p>
             </div>
         </div>
-    );
+    )
 };
 
 export default Footer;

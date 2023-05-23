@@ -19,7 +19,7 @@ const DisplayCategory = ({ toy }) => {
             data-aos-delay="50"
             data-aos-duration="1000"
             data-aos-once="false"
-            className="card w-96 bg-base-100 shadow-xl">
+            className="card w-96 bg-base-100 shadow-xl mx-auto">
             <figure><img className="h-96" src={photo} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{toyName}</h2>
