@@ -6,7 +6,7 @@ const ToyDetails = () => {
     const toy = useLoaderData()
     const { photo, toyName, userName, email, price, ratings, quantity, details } = toy;
     return (
-        <div className="md:w-4/5 mx-auto p-10 mt-12 rounded-lg" style={{ backgroundImage: `url(https://i.ibb.co/qBP1Sf5/login-background.png)` }}>
+        <div className="md:w-4/5 mx-auto p-10 mt-12 rounded-lg min-h-screen" style={{ backgroundImage: `url(https://i.ibb.co/qBP1Sf5/login-background.png)` }}>
             <h2 className="text-4xl font-bold text-center mb-10">{toyName}</h2>
             <div className="flex flex-col md:flex-row gap-20 opacity-80">
                 <img src={photo} className="rounded-xl w-1/2" alt="" />

@@ -8,8 +8,8 @@ const Banner = () => {
             <div id="slide1" className="carousel-item relative w-full">
                 <img src={slider1} className="w-full rounded-b-xl" />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 z-10">
-                    <a href="#slide4" className="btn btn-circle">❮</a>
-                    <a href="#slide2" className="btn btn-circle">❯</a>
+                    <a href="#slide4" className="btn btn-circle bg-[#7c9c05] border-none hover:bg-[#a5c926]">❮</a>
+                    <a href="#slide2" className="btn btn-circle bg-[#7c9c05] border-none hover:bg-[#a5c926]">❯</a>
                 </div>
                 <div className='absolute bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] text-white p-5 h-full w-full flex items-center rounded-b-xl z-0 md:pl-20'>
                     <div className='w-full md:w-2/5 ml-10'>
@@ -25,8 +25,8 @@ const Banner = () => {
             <div id="slide2" className="carousel-item relative w-full">
                 <img src={slider2} className="w-full rounded-b-xl" />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 z-10">
-                    <a href="#slide1" className="btn btn-circle">❮</a>
-                    <a href="#slide3" className="btn btn-circle">❯</a>
+                    <a href="#slide1" className="btn btn-circle bg-[#7c9c05] border-none hover:bg-[#a5c926]">❮</a>
+                    <a href="#slide3" className="btn btn-circle bg-[#7c9c05] border-none hover:bg-[#a5c926]">❯</a>
                 </div>
                 <div className='absolute bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] text-white p-5 h-full w-full flex items-center rounded-b-xl z-0 md:pl-20'>
                     <div className='w-full md:w-2/5 ml-10'>
@@ -41,8 +41,8 @@ const Banner = () => {
             <div id="slide3" className="carousel-item relative w-full">
                 <img src={slider3} className="w-full rounded-b-xl" />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 z-10">
-                    <a href="#slide2" className="btn btn-circle">❮</a>
-                    <a href="#slide4" className="btn btn-circle">❯</a>
+                    <a href="#slide2" className="btn btn-circle bg-[#7c9c05] border-none hover:bg-[#a5c926]">❮</a>
+                    <a href="#slide4" className="btn btn-circle bg-[#7c9c05] border-none hover:bg-[#a5c926]">❯</a>
                 </div>
                 <div className='absolute bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] text-white p-5 h-full w-full flex items-center rounded-b-xl z-0 md:pl-20'>
                     <div className='w-full md:w-2/5 ml-10'>
@@ -57,8 +57,8 @@ const Banner = () => {
             <div id="slide4" className="carousel-item relative w-full">
                 <img src={slider4} className="w-full rounded-b-xl" />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 z-10">
-                    <a href="#slide3" className="btn btn-circle">❮</a>
-                    <a href="#slide1" className="btn btn-circle">❯</a>
+                    <a href="#slide3" className="btn btn-circle bg-[#7c9c05] border-none hover:bg-[#a5c926]">❮</a>
+                    <a href="#slide1" className="btn btn-circle bg-[#7c9c05] border-none hover:bg-[#a5c926]">❯</a>
                 </div>
                 <div className='absolute bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] text-white p-5 h-full w-full flex items-center rounded-b-xl z-0 md:pl-20'>
                     <div className='w-full md:w-2/5 ml-10'>

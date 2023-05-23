@@ -10,6 +10,7 @@ import Register from "../pages/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ToyDetails from "../pages/ToyDetails/ToyDetails";
 import UpdateToy from "../pages/MyToys/UpdateToy";
+import ErrorPage from "../layout/ErrorPage";
 
 const Router = createBrowserRouter([
     {
@@ -57,6 +58,10 @@ const Router = createBrowserRouter([
                 loader: ({params}) => fetch(`https://edu-play-emporium-server-kazimahin68.vercel.app/toys/${params.id}`)
             }
         ]
+    },
+    {
+        path: '/*',
+        element: <ErrorPage></ErrorPage>
     }
 ])
 

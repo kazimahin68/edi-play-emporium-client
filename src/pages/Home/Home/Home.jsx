@@ -1,14 +1,24 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import Gallery from "../Gallery/Gallery";
+import Category from "../Category/Category";
+import { uniqBy } from "lodash";
+import { useEffect, useState } from "react";
+// import Category from "../Category/Category";
 
 const Home = () => {
     const toys = useLoaderData();
+    const [subCategory ,setSubCategory] = useState('')
+    console.log(subCategory)
     let galleryToy = [];
     if (toys.length > 9) {
         galleryToy = toys.slice(0, 9)
     }
-    // const uniqueSubcategory = uniqBy(toys, 'subCategory').map(toy => toy.subCategory)
+    useEffect(() => {
+        const uniqueSubcategory = uniqBy(toys, 'subCategory').map(toy => toy.subCategory)
+        setSubCategory(uniqueSubcategory)
+    }, [toys])
+    // console.log(uniqueSubcategory)
 
     return (
         <div>
@@ -22,6 +32,7 @@ const Home = () => {
                     }
                 </div>
             </div>
+            <Category></Category>
         </div>
     );
 };

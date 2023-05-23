@@ -36,8 +36,8 @@ const UpdateToy = () => {
         // console.log(toy)
     }
     return (
-        <form onSubmit={handleUpdateToy} className="md:w-4/5 p-10 mx-auto mt-12 rounded-lg" style={{ backgroundImage: `url(https://i.ibb.co/qBP1Sf5/login-background.png)` }}>
-            <div className="bg-white p-10 opacity-80 rounded-lg">
+        <form onSubmit={handleUpdateToy} className="md:w-4/5 p-10 mx-auto mt-12 rounded-lg min-h-screen flex justify-center items-center" style={{ backgroundImage: `url(https://i.ibb.co/qBP1Sf5/login-background.png)` }}>
+            <div className="bg-white p-10 opacity-80 rounded-lg w-full">
                 <h2 className="text-center font-extrabold text-4xl mb-10">Update Toy Information</h2>
                 <div className="grid gap-6 mb-6 md:grid-cols-2">
                     <div>
