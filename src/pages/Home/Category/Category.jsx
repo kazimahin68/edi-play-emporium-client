@@ -10,7 +10,7 @@ const Category = () => {
     // console.log(toys)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys`)
+        fetch(`https://edu-play-emporium-server-kazimahin68.vercel.app/toys`)
             .then(res => res.json())
             .then(data => {
                 setToys(data)

@@ -94,7 +94,7 @@ const Register = () => {
                             <button className='btn btn-outline rounded-full bg-base-200 border-none hover:bg-[#a5c926] '><FaGithub></FaGithub></button>
                             <button className='btn btn-outline rounded-full bg-base-200 border-none hover:bg-[#a5c926] text-[#0A66C2]'><FaLinkedinIn></FaLinkedinIn></button>
                         </div>
-                        <p className='text-center mb-5'>Already have an account? <Link to='/register' className='text-[#7c9c05] hover:text-[#a5c926] font-bold'>Login</Link></p>
+                        <p className='text-center mb-5'>Already have an account? <Link to='/login' className='text-[#7c9c05] hover:text-[#a5c926] font-bold'>Login</Link></p>
                     </div>
                 </div>
             </div>

@@ -19,7 +19,7 @@ const AddToy = () => {
         const details = form.details.value;
 
         const toy = {userName, toyName, email, subCategory, price, ratings, quantity, photo, details}
-        fetch('http://localhost:5000/toys', {
+        fetch('https://edu-play-emporium-server-kazimahin68.vercel.app/toys', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json',

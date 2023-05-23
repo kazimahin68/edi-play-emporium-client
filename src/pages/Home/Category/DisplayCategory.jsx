@@ -1,8 +1,17 @@
+import { useContext } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import { Toaster, toast } from "react-hot-toast";
 
 const DisplayCategory = ({ toy }) => {
+    const {user} = useContext(AuthContext)
+    const handleToast = () =>{
+        if(!user){
+            toast('You have to log in first to view details')
+        }
+    }
     // console.log(toy)
     const { _id, toyName, ratings, price, photo } = toy;
     return (
@@ -28,7 +37,8 @@ const DisplayCategory = ({ toy }) => {
                     </div>
                 </div>
                 <div className="card-actions justify-center mt-5">
-                    <Link to={`/toy/${_id}`} className="btn  bg-[#7c9c05] border-none hover:bg-[#a5c926]">View Details</Link>
+                    <Link to={`/toy/${_id}`} onClick={handleToast} className="btn  bg-[#7c9c05] border-none hover:bg-[#a5c926]">View Details</Link>
+                    <Toaster></Toaster>
                 </div>
             </div>
         </div>

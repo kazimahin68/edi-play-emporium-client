@@ -9,8 +9,9 @@ const Login = () => {
     const img = 'https://i.ibb.co/Cswbnhw/toy-constructor-isometric-blocks-1284-26315.png';
 
     const [success, setSuccess] = useState('');
+    const [error, setError] = useState('');
     const location = useLocation();
-    console.log(location)
+    // console.log(location)
     const from = location?.state?.from?.pathname || '/';
     const navigate = useNavigate()
 
@@ -28,7 +29,7 @@ const Login = () => {
                 navigate(from, { replace: true })
             })
             .catch(error => {
-                console.log(error)
+                setError(error)
             })
     }
 
@@ -38,7 +39,7 @@ const Login = () => {
             navigate(from, { replace: true })
         })
         .then(error =>{
-            console.log(error)
+            setError(error)
         })
     }
 
@@ -67,6 +68,7 @@ const Login = () => {
                             </label>
                             <input type="password" name='password' placeholder="Choose your password" className="input input-bordered" required/>
                             <p className='text-green-600'>{success}</p>
+                            <p className='text-red-600'>{error}</p>
                         </div>
                         <div className="form-control mt-6">
                             <input type="submit" className="btn font-bold bg-[#7c9c05] border-none hover:bg-[#a5c926]" value="Sign In" />

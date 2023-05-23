@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '../../assets/logo.png'
 import { AuthContext } from "../../Provider/AuthProvider";
 
@@ -9,10 +9,13 @@ const Navbar = () => {
     const toggleDropdown = () => {
         setDropdownVisible(!dropdownVisible)
     }
+    const navigate = useNavigate()
 
     const handleLogout = () =>{
         logOut()
-        .then(() =>{})
+        .then(() =>{
+            navigate('/')
+        })
         .then(error =>{
             console.log(error)
         })
@@ -21,8 +24,8 @@ const Navbar = () => {
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/all-toys'>All Toys</Link></li>
-        <li><Link to='/my-toys'>My Toys</Link></li>
-        <li><Link to='/add-toy'>Add a Toy</Link></li>
+        {user && <li><Link to='/my-toys'>My Toys</Link></li>}
+        {user && <li><Link to='/add-toy'>Add a Toy</Link></li>}
         <li><Link to='/blogs'>Blogs</Link></li>
     </>
 
